@@ -1,0 +1,63 @@
+header h1{
+text-align: center;
+font-size: 4.5rem;
+font-weight: bold;
+font-family: 'segoe UI', sans-serif;
+margin: 20px 0;
+}
+
+.eco{
+    color: #003049;
+    font-weight: 900;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.oceano{
+color: #38b000;
+font-weight: 900;
+border-radius: 10px;
+padding: 5px 10px;
+}
+
+.navbar{
+background-color: #000000;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.navbar ul{
+display: flex;
+justify-content: center;
+list-style: none;
+padding: 10px 0;
+margin: 0;
+}
+
+.navbar li{
+    margin: 0 40px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #90e0ef;
+    text-decoration: underline;
+}
+
+h1{
+font-size: 3rem;
+}
+
+h2{
+color: rgb(0, 2, 116);
+margin-bottom: 10px;
+}
+
