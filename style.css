@@ -66,34 +66,32 @@ margin-bottom: 10px;
 
 /*Esteli de bruno*/
 
-    .contenedor {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+   
+   .contenedor {
+    display: flex;        
+    gap: 20px;            
+    justify-content: center;
+    flex-wrap: wrap;      
+  }
 
-    .item {
-      margin-bottom: 20px;
-    }
+  .item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    min-width: 150px;      
+    text-align: center;
+  }
 
-    .titulo {
-      font-weight: bold;
-      font-size: 18px;
-      color: #333;
-     }
+  .titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-    .descripcion {
-      font-size: 14px;
-      color: #666;
-.contenedor {
-  display: flex; 
-  flex-direction: row; 
-  gap: 20px; 
-  flex-wrap: wrap; 
-}
+  .descripcion {
+    font-size: 14px;
+    color: #555;
+  }
 
 .item {
   border: 1px solid #ccc;
@@ -102,4 +100,4 @@ margin-bottom: 10px;
   box-sizing: border-box;
 }
 
- }
+ 
