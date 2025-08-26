@@ -64,3 +64,29 @@ margin-bottom: 10px;
 
 /*Estilos de Benja*/
 
+/*Esteli de bruno*/
+
+    .contenedor {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .item {
+      margin-bottom: 20px;
+    }
+
+    .titulo {
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+     }
+
+    .descripcion {
+      font-size: 14px;
+      color: #666;
+
+ }
