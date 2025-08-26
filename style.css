@@ -88,5 +88,18 @@ margin-bottom: 10px;
     .descripcion {
       font-size: 14px;
       color: #666;
+.contenedor {
+  display: flex; 
+  flex-direction: row; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  box-sizing: border-box;
+}
 
  }
