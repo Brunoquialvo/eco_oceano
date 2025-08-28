@@ -100,4 +100,11 @@ margin-bottom: 10px;
   box-sizing: border-box;
 }
 
- 
+ body{
+  background-image: url('imagenes/Diseño\ sin\ título.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+ }
