@@ -7,22 +7,8 @@ font-family: 'segoe UI', sans-serif;
 margin: 20px 0;
 }
 
-.eco{
-    color: #003049;
-    font-weight: 900;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.oceano{
-color: #38b000;
-font-weight: 900;
-border-radius: 10px;
-padding: 5px 10px;
-}
-
 .navbar{
-background-color: #000000;
+background-color: #0044ff;
 position: sticky;
 top: 0;
 z-index: 100;
@@ -61,6 +47,100 @@ h2{
 color: rgb(0, 2, 116);
 margin-bottom: 10px;
 }
+
+#intro1{
+
+  font-size: 3.5rem; /* Letras grandes */
+    color: #004d99; /* Azul oscuro, pero no tanto */
+    text-align: center; /* Centrado para que el texto se vea bien en todas las pantallas */
+    max-width: 80%; /* Esto hace que no se centre tanto y tenga un margen a los lados */
+    line-height: 1.2; /* Espacio entre líneas para que se lea mejor */
+    margin: 0 auto; /* Centrado real, con un ancho máximo se mantiene en el medio pero con espacio a los costados */
+
+}
+
+#texto1{
+  font-size: 3.5rem; /* Letras grandes */
+    color: #00ff80; /* Azul oscuro, pero no tanto */
+
+}
+#texto2{
+  font-size: 3.5rem; /* Letras grandes */
+    color: #00ff80; /* Azul oscuro, pero no tanto */
+
+}
+
+
+
+section h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(190, 255, 187); /* Para que se vea en el fondo oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para que destaque */
+}
+
+section p{
+ text-align: center;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(255, 255, 255); /* Para que se vea en el fondo oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para que destaque */
+}
+
+
+section h2 {
+    font-size: 2.5rem;
+}
+
+section p {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex; /* Convierte la barra en un contenedor flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    width: 100%;
+}
+
+.navbar ul {
+    display: flex; /* Convierte la lista en un contenedor flexbox */
+    justify-content: center; /* Centra los elementos de la lista */
+    list-style: none; /* Elimina las viñetas de la lista */
+
+}
+
+.navbar li {
+    margin: 0 20px; /* Agrega espacio entre los enlaces */
+}
+
+.navbar a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px; /* Agrega un padding para que los enlaces sean más fáciles de presionar */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    transition: background-color 0.3s ease; /* Añade una transición suave al pasar el mouse */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+
+
 
 /*Estilos de Benja*/
 
