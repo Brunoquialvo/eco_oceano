@@ -205,3 +205,49 @@ body{
   margin-left: 20px;
 }
 
+/* Contenedor principal para centrar el bloque de texto */
+.intro-texto {
+  /* Centra el bloque de texto horizontalmente con márgenes automáticos */
+  margin: 40px auto; 
+  
+  /* Limita el ancho del texto para que no se extienda por toda la pantalla (mejora la lectura) */
+  max-width: 850px; 
+  
+  /* Asegura que el texto dentro del bloque esté alineado al centro */
+  text-align: center; 
+  
+  /* Añade un poco de relleno para que el texto no toque los bordes del navegador */
+  padding: 0 20px;
+}
+
+/* Estilo para el Título Principal (ECO OCÉANO) */
+#benja1 {
+  /* Color Verde Marino para el título principal */
+  color: #3cb371; /* Un color verde marino (MediumSeaGreen) */
+  font-size: 3.5rem;
+  font-weight: 800;
+  /* Sombras para mejorar la visibilidad sobre el fondo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+  margin-bottom: 10px;
+}
+
+/* Estilo para el Subtítulo (Nuestra Misión: Inspirar un Planeta Azul más Saludable.) */
+#benja2 {
+  /* Color Blanco para un alto contraste */
+  color: #ffffff; 
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Estilo para todos los párrafos de introducción */
+.intro-parrafo {
+  /* Color Blanco muy suave o azul muy claro para los párrafos */
+  color: #f0f8ff; /* Blanco algo más suave (AliceBlue) */
+  font-size: 1.20rem;
+  line-height: 1.8; /* Aumenta el espacio entre líneas (más fácil de leer) */
+  /* Pequeña sombra para que las letras se 'despeguen' del fondo */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
+}
