@@ -65,7 +65,7 @@ margin-bottom: 10px;
 
 }
 #texto2{
-  font-size: 3.5rem; /* Letras grandes */
+  font-size: 3.0rem; /* Letras grandes */
     color: #00ff80; /* Azul oscuro, pero no tanto */
 
 }
@@ -136,16 +136,6 @@ section p {
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
 }
-
-
-
-
-
-
-/*Estilos de Benja*/
-
-/*Esteli de bruno*/
-
    
    .contenedor {
     display: flex;        
@@ -180,11 +170,38 @@ section p {
   box-sizing: border-box;
 }
 
- body{
+body{
   background-image: url('imagenes/Diseño\ sin\ título.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
  }
+
+ 
+ .navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0; 
+  margin: 0;
+  width: 100%; 
+  align-items: center;
+}
+
+.navbar ul li:first-child {
+  margin-right: center;
+}
+
+.navbar ul li:nth-child(2) {
+  margin-left: 10%; 
+}
+
+.navbar ul li:not(:first-child) {
+  margin-left: 20px; 
+}
+
+.navbar ul li:not(:first-child):not(:nth-child(2)) {
+  margin-left: 20px;
+}
+
