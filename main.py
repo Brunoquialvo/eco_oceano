@@ -9,7 +9,7 @@ PASSWORD = "1234"
 DATABASE = "eco_oceano"
 
 
-# --- codigo que se me recomento pa que funcionara mejor ---
+# --- codigo que se me recomendo pa que funcionara mejor ---
 
 
 def crear_conexion(con_db=True):
@@ -215,3 +215,7 @@ while programa_activo:
         programa_activo = False # Esto hace que el bucle 'while' termine
     else:
         print("Opción no válida.")
+
+
+if __name__ == "__main__":
+    menu_usuario() 
