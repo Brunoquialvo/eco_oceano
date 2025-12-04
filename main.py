@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector #type: ignore
 import getpass
 
 
@@ -6,10 +6,10 @@ HOST = "localhost"
 PORT = 3306
 USER = "root"
 PASSWORD = "1234"
-DATABASE = "eco_oceano"
+DATABASE = "clubciencias"
 
 
-# --- codigo que se me recomendo pa que funcionara mejor ---
+# --- codigo que se me recomento pa que funcionara mejor ---
 
 
 def crear_conexion(con_db=True):
@@ -44,7 +44,7 @@ def ejecutar_consulta(sql, parametros=None, fetch=False):
 
 def inicializar_db():
     sql = """
-    CREATE TABLE IF NOT EXISTS registros_eco_oceano (
+    CREATE TABLE IF NOT EXISTS registros (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         Nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
         Contrasena TEXT NOT NULL,
@@ -54,7 +54,7 @@ def inicializar_db():
     );
     """
     ejecutar_consulta(sql)
-    print("Tabla 'registros_eco_oceano' lista para la entrega.")
+    print("Tabla 'registros' lista para la entrega.")
 
 
 # --- FUNCIONALIDADES INDISPENSABLES QUE USTED DIJO EN EL CLASSROOM ---
@@ -69,7 +69,7 @@ def registrarse():
     direccion = input("Dirección: ").strip()
    
     sql = """
-    INSERT INTO registros_eco_oceano (Nombre_usuario, Contrasena, Email, Telefono, Direccion)
+    INSERT INTO registros (Nombre_usuario, Contrasena, Email, Telefono, Direccion)
     VALUES (%s, %s, %s, %s, %s)
     """
     parametros = (nombre, clave, email, telefono, direccion)
@@ -83,7 +83,7 @@ def iniciar_sesion():
     nombre = input("Tu Usuario: ").strip()
     clave = input("Tu Contraseña: ").strip()
    
-    sql = "SELECT id, Nombre_usuario FROM registros_eco_oceano WHERE Nombre_usuario = %s AND Contrasena = %s"
+    sql = "SELECT id, Nombre_usuario FROM registros WHERE Nombre_usuario = %s AND Contrasena = %s"
     parametros = (nombre, clave)
    
     usuarios = ejecutar_consulta(sql, parametros, fetch=True)
@@ -100,7 +100,7 @@ def iniciar_sesion():
 def consultar_datos_personales(user_id):
     print("--- 3. CONSULTA DE DATOS ---")
    
-    sql = "SELECT Nombre_usuario, Email, Telefono, Direccion FROM registros_eco_oceano WHERE id = %s"
+    sql = "SELECT Nombre_usuario, Email, Telefono, Direccion FROM registros WHERE id = %s"
    
     datos = ejecutar_consulta(sql, (user_id,), fetch=True)
 
@@ -124,13 +124,13 @@ def modificar_datos(usuario_activo):
     nueva_direccion = input("Nueva Dirección: ").strip()
    
     if nuevo_email:
-        sql = "UPDATE registros_eco_oceano SET Email = %s WHERE id = %s"
+        sql = "UPDATE registros SET Email = %s WHERE id = %s"
         ejecutar_consulta(sql, (nuevo_email, usuario_activo['id']))
     if nuevo_telefono:
-        sql = "UPDATE registros_eco_oceano SET Telefono = %s WHERE id = %s"
+        sql = "UPDATE registros SET Telefono = %s WHERE id = %s"
         ejecutar_consulta(sql, (nuevo_telefono, usuario_activo['id']))
     if nueva_direccion:
-        sql = "UPDATE registros_eco_oceano SET Direccion = %s WHERE id = %s"
+        sql = "UPDATE registros SET Direccion = %s WHERE id = %s"
         ejecutar_consulta(sql, (nueva_direccion, usuario_activo['id']))
 
 
@@ -142,7 +142,7 @@ def eliminar_usuario(usuario_activo):
     confirmacion = input("¿Estás seguro? Escribí 'SI' para confirmar: ").strip().upper()
    
     if confirmacion == 'SI':
-        sql = "DELETE FROM registros_eco_oceano WHERE id = %s"
+        sql = "DELETE FROM registros WHERE id = %s"
         ejecutar_consulta(sql, (usuario_activo['id'],))
         print(f"Cuenta de '{usuario_activo['Nombre_usuario']}' eliminada permanentemente.")
         return True
@@ -158,7 +158,7 @@ def menu_usuario(usuario_activo):
     # Usamos una variable de control
     sesion_activa = True
     while sesion_activa:
-        print("--- MENÚ DE SESIÓN Eco Oceano ---")
+        print("--- MENÚ DE SESIÓN ---")
         print("1. Consultar mis Datos Personales")
         print("2. Modificar mis Datos Personales")
         print("3. Eliminar mi Cuenta")
@@ -196,7 +196,7 @@ while programa_activo:
 
 
     print("\n=========================")
-    print("  sistema de cuentas de Eco Oceano")
+    print("  sistema de cuentas")
     print("=========================")
     print("1. Registrarse (Crear Cuenta)")
     print("2. Iniciar Sesión")
@@ -215,7 +215,4 @@ while programa_activo:
         programa_activo = False # Esto hace que el bucle 'while' termine
     else:
         print("Opción no válida.")
-
-
-if __name__ == "__main__":
-    menu_usuario() 
+    
