@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Eco Océano</title>
+</head>
+<body class="ocean-bg">
+
+   <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li><h2>ECO OCÉANO</h2></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#productos">Producto</a></li>
+                <li><a href="#explora">Explora el océano</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#" class="btn-login">Login/Registro</a>
+        </div>
+    </nav>
+    <div class="container form-container" id="loginForm">
+        <h1>Iniciar Sesión</h1>
+        
+        <form id="login-form" onsubmit="handleLogin(event)" method="POST">
+            <div class="mb-3">
+                <label for="emailLogin" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="emailLogin" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="passwordLogin" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="passwordLogin" name="password" required>
+            </div>
+            
+            <div id="login-message" class="alert d-none" role="alert"></div>
+
+            <button type="submit" class="btn btn-success">Acceder</button>
+        </form>
+
+        <div class="switch-form">
+            ¿No tienes cuenta? <a onclick="switchForm('register')">Regístrate aquí</a>
+        </div>
+    </div>
+
+    <div class="container form-container" id="registerForm" style="display: none;">
+        <h1>Registro de Usuario</h1>
+        
+        <form id="register-form" onsubmit="handleRegister(event)" method="POST">
+            <div class="mb-3">
+                <label for="nameRegister" class="form-label">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="nameRegister" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="emailRegister" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="emailRegister" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="passwordRegister" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="passwordRegister" name="password" required>
+            </div>
+            <div id="register-message" class="alert d-none" role="alert"></div>
+
+            <button type="submit" class="btn btn-success">Registrarme</button>
+        </form>
+        
+        <div class="switch-form">
+            ¿Ya tienes cuenta? <a onclick="switchForm('login')">Inicia Sesión</a>
+        </div>
+    </div>
+
+    <script>
+        function switchForm(formType) {
+            const login = document.getElementById('loginForm');
+            const register = document.getElementById('registerForm');
+            document.getElementById('login-message').classList.add('d-none');
+            document.getElementById('register-message').classList.add('d-none');
+            
+            if (formType === 'register') {
+                login.style.display = 'none';
+                register.style.display = 'block';
+            } else {
+                login.style.display = 'block';
+                register.style.display = 'none';
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault(); 
+            
+            const passwordInput = document.getElementById('passwordLogin').value;
+            const messageDiv = document.getElementById('login-message');
+
+            messageDiv.classList.add('d-none');
+            messageDiv.classList.remove('alert-success', 'alert-danger');
+
+            if (passwordInput === '12345') {
+                messageDiv.textContent = '¡Inicio de sesión exitoso! Redirigiendo...';
+                messageDiv.classList.remove('d-none');
+                messageDiv.classList.add('alert-success');
+
+                setTimeout(() => {
+                    window.location.href = 'index.html'; 
+                }, 2000);
+
+            } else {
+                messageDiv.textContent = 'Error: Credenciales incorrectas (Simulación).';
+                messageDiv.classList.remove('d-none');
+                messageDiv.classList.add('alert-danger');
+            }
+        }
+
+        function handleRegister(event) {
+            event.preventDefault(); 
+            
+            const messageDiv = document.getElementById('register-message');
+            const registerForm = document.getElementById('register-form');
+
+            messageDiv.classList.add('d-none');
+            messageDiv.classList.remove('alert-success', 'alert-danger');
+
+            messageDiv.textContent = '¡Registro exitoso! Ya puedes iniciar sesión.';
+            messageDiv.classList.remove('d-none');
+            messageDiv.classList.add('alert-success');
+
+            registerForm.reset();
+            
+            setTimeout(() => {
+                switchForm('login');
+            }, 3000);
+        }
+    </script>
+    
+    <div class="footer-wave">
+        <div class="footer-wave-layer2"></div>
+        <div class="footer-wave-layer1"></div>
+    </div>
+    <footer id="pie-de-pagina">
+        <p>&copy; 2025 Eco Océano. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
