@@ -82,7 +82,7 @@
           yearEl.textContent = new Date().getFullYear();
         }
 
-        // 2) Manejo de clics/tecla Enter/Espacio en cada tarjeta (.item)
+        // decalracion de variables
         var items = document.querySelectorAll('.contenedor .item');
         var modalEl = document.getElementById('infoModal');
         if (modalEl && typeof bootstrap !== 'undefined') {
@@ -90,10 +90,12 @@
           var modalBody = document.getElementById('infoModalBody');
           var modalTitle = document.getElementById('infoModalLabel');
 
+          //colecciona todo los items
           items.forEach(function (item) {
             item.setAttribute('tabindex', '0');
             item.style.cursor = 'pointer';
-
+            
+            //analisa un item en particular
             item.addEventListener('click', function () {
               var title = item.querySelector('.titulo') ? item.querySelector('.titulo').textContent.trim() : '';
               var desc = item.querySelector('.descripcion') ? item.querySelector('.descripcion').textContent.trim() : '';
@@ -115,4 +117,5 @@
     </script>
 </body>
 </html>
+
 
